@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<script src="intersectionobserver.js"></script>
+<script src="lazy-elements.js"></script>
+
+<style>
+div, x-optional, x-deferred {
+  height: 50px;
+  margin: 10px;
+  background-color: papayawhip;
+  color: salmon
+}
+x-optional {
+  background-color: pink;
+}
+x-deferred {
+  background-color: lightblue;
+}
+#item-5 {
+  background-color: red !important;
+}
+</style>
+<script>
+  function dumpDivs() {
+    for (var i = 0; i < 20; i++) {
+      document.write('<div>' + (i + 1) + '</div>');
+    }
+  }
+  function dumpOptional() {
+    document.write('<x-optional>optional</x-optional><x-deferred>deferred</x-deferred>');
+  }
+
+  for (var i = 0; i < 10; i++) {
+    dumpDivs();
+    dumpOptional();
+  }
+
+  // var item = document.getElementById('item-20');
+
+  // function onIntersect(records) {
+  //   records.forEach(function(record) {
+  //     console.log(record);
+  //   });
+  // }
+
+  // var intersectionObserver = new IntersectionObserver({
+  //   callback: onIntersect,
+  // });
+  // intersectionObserver.observe(item);
+</script>
